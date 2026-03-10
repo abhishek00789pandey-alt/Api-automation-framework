@@ -20,11 +20,5 @@ pipeline {
                  bat 'allure generate allure-results --clean -o allure-report'
             }
         }
-       stage('Check Python') {
-            steps {
-                bat 'python --version'
-                bat 'pip --version'
-            }
-        }
     }
 }

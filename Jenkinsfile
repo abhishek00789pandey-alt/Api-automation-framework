@@ -26,6 +26,11 @@ pipeline {
                 bat 'pytest --alluredir=reports'
             }
         }
-
+       stage('Check Python') {
+            steps {
+                bat 'python --version'
+                bat 'pip --version'
+            }
+        }
     }
 }

@@ -21,6 +21,11 @@ pipeline {
                 bat 'pytest'
             }
         }
+        stage('Generate Allure Report') {
+            steps {
+                bat 'pytest --alluredir=reports'
+            }
+        }
 
     }
 }

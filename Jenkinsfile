@@ -15,6 +15,11 @@ pipeline {
                 bat '"C:\\Users\\abhis\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" -m pytest --alluredir=allure-results'
             }
         }
+         stage('Run Automation Platform') {
+            steps {
+                sh '"C:\\Users\\abhis\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" scripts/run_tests.py'
+            }
+        }
         stage('Generate Allure Report') {
             steps {
                  bat 'allure generate allure-results --clean -o allure-report'
